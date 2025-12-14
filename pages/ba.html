@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="ar">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Harufi ب</title>
+
+<style>
+  html,body{
+    height:100%;
+    margin:0;
+    background:#ffffff;
+    font-family: "Noto Naskh Arabic","Scheherazade New","Amiri",sans-serif;
+    direction: rtl;
+    text-align: left;
+    padding: 20px;
+    line-height: 1.8;
+  }
+
+  .container{
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  h1{
+    font-size: 36px;
+    color: #111;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  .section{
+    margin-bottom: 40px;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 8px;
+    border-right: 4px solid #222;
+  }
+
+  .section-title{
+    font-size: 28px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin-bottom: 15px;
+  }
+
+  .subsection-title{
+    font-size: 22px;
+    font-weight: 700;
+    color: #2c5282;
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+
+  .content{
+    font-size: 18px;
+    color: #333;
+    line-height: 2;
+  }
+
+  .back-link{
+    display: inline-block;
+    margin-top: 30px;
+    padding: 12px 24px;
+    background: #222;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 18px;
+  }
+
+  .back-link:hover{
+    background: #444;
+  }
+
+  .hidden{
+    display: none;
+  }
+
+  @media (max-width: 600px){
+    html,body{
+      padding: 15px;
+    }
+    
+    h1{
+      font-size: 28px;
+    }
+    
+    .section-title{
+      font-size: 24px;
+    }
+    
+    .subsection-title{
+      font-size: 20px;
+    }
+    
+    .content{
+      font-size: 16px;
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Get selection from localStorage
+    const selection = localStorage.getItem("selection");
+    
+    // Hide all sections initially
+    document.getElementById("maza-section").classList.add("hidden");
+    document.getElementById("mata-section").classList.add("hidden");
+    document.getElementById("jariri-section").classList.add("hidden");
+    
+    // Show only the selected section
+    if (selection === "maza") {
+      document.getElementById("maza-section").classList.remove("hidden");
+    } else if (selection === "mata") {
+      document.getElementById("mata-section").classList.remove("hidden");
+    } else if (selection === "jariri") {
+      document.getElementById("jariri-section").classList.remove("hidden");
+    } else {
+      // If no selection, show all sections
+      document.getElementById("maza-section").classList.remove("hidden");
+      document.getElementById("mata-section").classList.remove("hidden");
+      document.getElementById("jariri-section").classList.remove("hidden");
+    }
+  });
+</script>
+
+</head>
+<body>
+
+<div class="container">
+  <h1>Harufi<br> ب</h1>
+
+  <!-- Maza Section -->
+  <div id="maza-section" class="section">
+    <div class="section-title">Maza</div>
+    
+    <div class="subsection-title">Sanadin Cuta</div>
+    <div class="content">
+      Kare ya yi masa haushi kuma daga cikin aljanu ne, yana kuma da sihiri daga bangaren mata da aka jefa a cikin ruwa.
+    </div>
+    
+    <div class="subsection-title">Alama</div>
+    <div class="content">
+      Ciwon ciki, raunin jiki, idan ya kwana ya tashi da mura, tashin hankali, kuma barcinsa yana da nauyi.
+    </div>
+    
+    <div class="subsection-title">Magani</div>
+    <div class="content">
+      A rubuta masa Ayaush-shifa, ayatul kursi, da karshen Suratul-baƙara, da Hurufun-nuraniyya, da hatimi Musallasi, da Hijabul-aƙfaali-sab'a
+      <br><br>
+      Ya yi amfani da maganin Ɗarba: a ɗauki lemo goma ko uku a gasa ko dabino a madadin haka, a dafa su da ruwa sau uku, sannan a niƙa su har su zama kamar man shafawa, a dafa su da zuma kiɗa (ratal biyu), a ƙara كابلي da aka cire kwaya (oza biyu) yana kan wuta har ya zama kamar alewa, a ajiye shi a cikin tukunyar yumɓu mai lami. A shayar dashi safe da yamma, zai warke da izinin Allah. A rubuta masa a cikin kwano ayatul kursi da kulhuwa da falaki da nasi da Fatiha, a wanke shi da ruwa a sha in za'a kwanta bacci kwana uku a jere ko bakwai, zai warke da izinin Allah.
+    </div>
+  </div>
+
+  <!-- Mata Section -->
+  <div id="mata-section" class="section">
+    <div class="section-title">Mata</div>
+    
+    <div class="subsection-title">(Dalilan Cuta)</div>
+    <div class="content">
+      Sihiri da aka yi mata an narkar da shi da ruwa ta sha ko kuma an yayyafa shi a wurinta.
+    </div>
+    
+    <div class="subsection-title">Alamar Cutar</div>
+    <div class="content">
+      Ciwon zuciya, kasala a jikinta da a gabobinta da ƙafafunta. Wataƙila tana zubar da jini, idan ta kwana tana ganin mafarkai marasa kyau tana tashi da tsoro wataƙila kuma iska daga aljannu da cututtuka ya same ta.
+    </div>
+    
+    <div class="subsection-title">Magani</div>
+    <div class="content">
+      A rubuta mata a kan guntun kasko ja sabo guda huɗu - ga abin da za a rubuta (a kan ta farko): <br>﴿وَقَدِمْنَا إِلَىٰ مَا عَمِلُوا مِنْ عَمَلٍ فَجَعَلْنَاهُ هَبَاءً مَّنثُورًا﴾ <br>﴿قَالَ مُوسَىٰ مَا جِئْتُم بِهِ السِّحْرُ ۖ إِنَّ اللَّهَ سَيُبْطِلُهُ إِنَّ اللَّهَ لَا يُصْلِحُ عَمَلَ الْمُفْسِدِينَ﴾ <br>(A kan ta biyu): <br>﴿وَأَوْحَيْنَا إِلَىٰ مُوسَىٰ أَنْ أَلْقِ عَصَاكَ ۖ فَإِذَا هِيَ تَلْقَفُ مَا يَأْفِكُونَ * فَوَقَعَ الْحَقُّ وَبَطَلَ مَا كَانُوا يَعْمَلُونَ﴾<br> (A kan ta uku): <br>﴿مُّحَمَّدٌ رَّسُولُ اللَّهِ وَالَّذِينَ مَعَهُ<br>﴾ har zuwa ƙarshen Suratul-fathi <br>(A kan ta huɗu):<br> ﴿فَإِذَا جَاءَ وَعْدُ رَبِّي جَعَلَهُ دَكَّاءَ ۖ وَكَانَ وَعْدُ رَبِّي حَقًّا﴾. <br>Sa'an nan a wanke shi da ruwa a daka a cikinsa ƙwayar murjani mai tsabta ta yi wanka da shi, idan ba za ta iya yin wanka ba sai a yayyafa shi a wurinta ta taka a KansaKuma a rubuta mata waɗannan sunaye a kan takardu uku ta yi turare da su a kwanaki uku masu jere ga abin da za a rubuta:<br> (هـ طل وال ح هـ ۱۱ م ق س ط ي ل) <br>kuma ta yi turare da Mi'atussa'ila da Jawi da Lubban-zakar, zata warke da izinin Allah
+      </div>
+  </div>
+
+  <!-- Jariri Section -->
+  <div id="jariri-section" class="section">
+    <div class="section-title">Jariri</div>
+    
+    <div class="subsection-title">( Dalilin Cuta )</div>
+    <div class="content">
+      An yi maita daga mace baƙar fata mai ja ko ta waɗanda ke da aljanu na Sulayman.
+    </div>
+    
+    <div class="subsection-title">Alamomi</div>
+    <div class="content">
+      Rauni, alamarsa shine yana kuka yana suma, launinsa yana canzawa, yana cika fushi, jikinsa yana ja, yana zufa a barcinsa.
+    </div>
+    
+    <div class="subsection-title">Magani</div>
+    <div class="content">
+      A rubuta masa ƙarshen Surah Al-Hashr tare da ruqyar ido da maita da Ayatul Kursi da Al-Fatiha da Al-Ikhlas da Al-Mu'awwidhatayn. A yi masa hayaƙi da mi'a sa'ila da lubban dhakar.
+    </div>
+  </div>
+
+  <a href="../index.html" class="back-link">← Koma baya</a>
+</div>
+
+</body>
+</html>
