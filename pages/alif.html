@@ -103,36 +103,37 @@
 </style>
 
 <script>
-  window.onload = function(){
+  document.addEventListener('DOMContentLoaded', function() {
     // Get selection from localStorage
     const selection = localStorage.getItem("selection");
     
-    console.log("Selected gender from localStorage:", selection); // For debugging
+    console.log("DEBUG - Gender selection:", selection);
     
-    // Hide all sections initially
+    // Check if we have a valid selection
+    if (!selection || (selection !== "maza" && selection !== "mata" && selection !== "jariri")) {
+      console.warn("No valid gender selected in localStorage");
+      // Show all sections if no valid selection
+      document.getElementById("maza-section").classList.remove("hidden");
+      document.getElementById("mata-section").classList.remove("hidden");
+      document.getElementById("jariri-section").classList.remove("hidden");
+      return;
+    }
+    
+    // Hide all sections first
     document.getElementById("maza-section").classList.add("hidden");
     document.getElementById("mata-section").classList.add("hidden");
     document.getElementById("jariri-section").classList.add("hidden");
     
-    // Check if selection exists and is valid
+    // Show only the selected section
     if(selection === "maza"){
       document.getElementById("maza-section").classList.remove("hidden");
-      console.log("Showing Maza section");
     } else if(selection === "mata"){
       document.getElementById("mata-section").classList.remove("hidden");
-      console.log("Showing Mata section");
     } else if(selection === "jariri"){
       document.getElementById("jariri-section").classList.remove("hidden");
-      console.log("Showing Jariri section");
-    } else {
-      // If no selection, show ALL sections
-      document.getElementById("maza-section").classList.remove("hidden");
-      document.getElementById("mata-section").classList.remove("hidden");
-      document.getElementById("jariri-section").classList.remove("hidden");
-      console.log("No gender selected, showing ALL sections");
     }
-  }
-</script>
+  });
+    </script>
   
 </head>
 <body>
