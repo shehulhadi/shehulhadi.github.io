@@ -101,22 +101,10 @@
 </style>
 
 <script>
-document.querySelectorAll(".letter-link").forEach(link => {
-  link.addEventListener("click", function(e){
-    const selected = document.querySelector('input[name="opt"]:checked');
-    if (!selected) {
-      e.preventDefault();
-      alert("A fara zabar jinsi kafin a danna harafi.");
-      return false;
-    }
-    
-    // Force the link to include gender parameter
-    const gender = selected.value;
-    const page = this.getAttribute('href');
-    window.location.href = `${page}?gender=${gender}`;
-    e.preventDefault(); // Prevent default navigation
-  });
-});
+// This function saves gender selection to localStorage
+function saveSelection(type){
+  localStorage.setItem("selection", type);
+}
 </script>
 
 </head>
@@ -135,38 +123,57 @@ document.querySelectorAll(".letter-link").forEach(link => {
   <div class="ring"></div>
 
   <div class="slots">
-
-    <div class="slot" style="--i:0"><a href="pages/ghayn.html" class="box">غ</a></div>
-    <div class="slot" style="--i:1"><a href="pages/zha.html" class="box">ظ</a></div>
-    <div class="slot" style="--i:2"><a href="pages/dad.html" class="box">ض</a></div>
-    <div class="slot" style="--i:3"><a href="pages/dhal.html" class="box">ذ</a></div>
-    <div class="slot" style="--i:4"><a href="pages/kha.html" class="box">خ</a></div>
-    <div class="slot" style="--i:5"><a href="pages/tha.html" class="box">ث</a></div>
-    <div class="slot" style="--i:6"><a href="pages/ta2.html" class="box">ت</a></div>
-    <div class="slot" style="--i:7"><a href="pages/shin.html" class="box">ش</a></div>
-    <div class="slot" style="--i:8"><a href="pages/ra.html" class="box">ر</a></div>
-    <div class="slot" style="--i:9"><a href="pages/qaf.html" class="box">ق</a></div>
-    <div class="slot" style="--i:10"><a href="pages/sad.html" class="box">ص</a></div>
-    <div class="slot" style="--i:11"><a href="pages/fa.html" class="box">ف</a></div>
-    <div class="slot" style="--i:12"><a href="pages/ayn.html" class="box">ع</a></div>
-    <div class="slot" style="--i:13"><a href="pages/sin.html" class="box">س</a></div>
-    <div class="slot" style="--i:14"><a href="pages/nun.html" class="box">ن</a></div>
-    <div class="slot" style="--i:15"><a href="pages/mim.html" class="box">م</a></div>
-    <div class="slot" style="--i:16"><a href="pages/lam.html" class="box">ل</a></div>
-    <div class="slot" style="--i:17"><a href="pages/kaf.html" class="box">ك</a></div>
-    <div class="slot" style="--i:18"><a href="pages/ya.html" class="box">ي</a></div>
-    <div class="slot" style="--i:19"><a href="pages/ta.html" class="box">ط</a></div>
-    <div class="slot" style="--i:20"><a href="pages/ha2.html" class="box">ح</a></div>
-    <div class="slot" style="--i:21"><a href="pages/zal.html" class="box">ز</a></div>
-    <div class="slot" style="--i:22"><a href="pages/waw.html" class="box">و</a></div>
-    <div class="slot" style="--i:23"><a href="pages/ha.html" class="box">ه</a></div>
-    <div class="slot" style="--i:24"><a href="pages/dal.html" class="box">د</a></div>
-    <div class="slot" style="--i:25"><a href="pages/jim.html" class="box">ج</a></div>
-    <div class="slot" style="--i:26"><a href="pages/ba.html" class="box">ب</a></div>
-    <div class="slot" style="--i:27"><a href="pages/alif.html" class="box">ا</a></div>
-
+    <!-- Add "letter-link" class to each <a> tag -->
+    <div class="slot" style="--i:0"><a href="pages/ghayn.html" class="box letter-link">غ</a></div>
+    <div class="slot" style="--i:1"><a href="pages/zha.html" class="box letter-link">ظ</a></div>
+    <div class="slot" style="--i:2"><a href="pages/dad.html" class="box letter-link">ض</a></div>
+    <div class="slot" style="--i:3"><a href="pages/dhal.html" class="box letter-link">ذ</a></div>
+    <div class="slot" style="--i:4"><a href="pages/kha.html" class="box letter-link">خ</a></div>
+    <div class="slot" style="--i:5"><a href="pages/tha.html" class="box letter-link">ث</a></div>
+    <div class="slot" style="--i:6"><a href="pages/ta2.html" class="box letter-link">ت</a></div>
+    <div class="slot" style="--i:7"><a href="pages/shin.html" class="box letter-link">ش</a></div>
+    <div class="slot" style="--i:8"><a href="pages/ra.html" class="box letter-link">ر</a></div>
+    <div class="slot" style="--i:9"><a href="pages/qaf.html" class="box letter-link">ق</a></div>
+    <div class="slot" style="--i:10"><a href="pages/sad.html" class="box letter-link">ص</a></div>
+    <div class="slot" style="--i:11"><a href="pages/fa.html" class="box letter-link">ف</a></div>
+    <div class="slot" style="--i:12"><a href="pages/ayn.html" class="box letter-link">ع</a></div>
+    <div class="slot" style="--i:13"><a href="pages/sin.html" class="box letter-link">س</a></div>
+    <div class="slot" style="--i:14"><a href="pages/nun.html" class="box letter-link">ن</a></div>
+    <div class="slot" style="--i:15"><a href="pages/mim.html" class="box letter-link">م</a></div>
+    <div class="slot" style="--i:16"><a href="pages/lam.html" class="box letter-link">ل</a></div>
+    <div class="slot" style="--i:17"><a href="pages/kaf.html" class="box letter-link">ك</a></div>
+    <div class="slot" style="--i:18"><a href="pages/ya.html" class="box letter-link">ي</a></div>
+    <div class="slot" style="--i:19"><a href="pages/ta.html" class="box letter-link">ط</a></div>
+    <div class="slot" style="--i:20"><a href="pages/ha2.html" class="box letter-link">ح</a></div>
+    <div class="slot" style="--i:21"><a href="pages/zal.html" class="box letter-link">ز</a></div>
+    <div class="slot" style="--i:22"><a href="pages/waw.html" class="box letter-link">و</a></div>
+    <div class="slot" style="--i:23"><a href="pages/ha.html" class="box letter-link">ه</a></div>
+    <div class="slot" style="--i:24"><a href="pages/dal.html" class="box letter-link">د</a></div>
+    <div class="slot" style="--i:25"><a href="pages/jim.html" class="box letter-link">ج</a></div>
+    <div class="slot" style="--i:26"><a href="pages/ba.html" class="box letter-link">ب</a></div>
+    <div class="slot" style="--i:27"><a href="pages/alif.html" class="box letter-link">ا</a></div>
   </div>
 </div>
 
+<script>
+// Wait for page to load completely
+window.addEventListener('DOMContentLoaded', function() {
+  // Add click event to all letter links
+  document.querySelectorAll(".letter-link").forEach(link => {
+    link.addEventListener("click", function(e){
+      // Check if any gender is selected
+      const selected = document.querySelector('input[name="opt"]:checked');
+      
+      if (!selected) {
+        // Prevent navigation and show alert
+        e.preventDefault();
+        alert("A fara zabar jinsi kafin a danna harafi.");
+        return false;
+      }
+    });
+  });
+});
+</script>
+
 </body>
-</html>
+  </html>
