@@ -1,0 +1,497 @@
+<!doctype html>
+<html lang="ha">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Diwani na Shaykh Ibrahim Niasse</title>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Noto+Naskh+Arabic:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0e0e0e;
+      --card: #151515;
+      --accent: #c8a24a;
+      --text: #f5f5f5;
+      --muted: #b5b5b5;
+      --radius: 18px;
+      --transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Noto Naskh Arabic', 'Amiri', serif;
+      background: linear-gradient(180deg, #080808 0%, #121212 50%, #080808 100%);
+      color: var(--text);
+      direction: rtl;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* Abubuwan Bayan Gida na Ado */
+    .background-elements {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      opacity: 0.15;
+    }
+
+    .bg-circle {
+      position: absolute;
+      border-radius: 50%;
+      background: radial-gradient(circle, var(--accent) 0%, transparent 70%);
+    }
+
+    .bg-circle:nth-child(1) {
+      width: 300px;
+      height: 300px;
+      top: -100px;
+      left: -100px;
+      opacity: 0.1;
+    }
+
+    .bg-circle:nth-child(2) {
+      width: 200px;
+      height: 200px;
+      bottom: -50px;
+      right: 10%;
+      opacity: 0.08;
+    }
+
+    .bg-circle:nth-child(3) {
+      width: 150px;
+      height: 150px;
+      top: 30%;
+      left: 15%;
+      opacity: 0.05;
+    }
+
+    /* Babban Akwati */
+    .opening-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+      position: relative;
+    }
+
+    /* Iyakar Sama ta Ado */
+    .top-border {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, var(--accent) 0%, transparent 50%, var(--accent) 100%);
+    }
+
+    /* Sashen Tambari/Take */
+    .logo-section {
+      text-align: center;
+      margin-bottom: 40px;
+      max-width: 800px;
+      animation: fadeInDown 1.2s ease-out;
+    }
+
+    .logo-section h1 {
+      font-size: 3.5rem;
+      color: var(--accent);
+      margin-bottom: 15px;
+      text-shadow: 0 5px 15px rgba(200, 162, 74, 0.3);
+      letter-spacing: 1px;
+      position: relative;
+      display: inline-block;
+    }
+
+    .logo-section h1::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      right: 25%;
+      width: 50%;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, var(--accent), transparent);
+    }
+
+    .logo-section .subtitle {
+      font-size: 1.4rem;
+      color: var(--muted);
+      line-height: 1.6;
+      margin-top: 20px;
+    }
+
+    /* Babban Katin Abun Ciki */
+    .content-card {
+      background: linear-gradient(145deg, rgba(21, 21, 21, 0.9), rgba(10, 10, 10, 0.9));
+      border-radius: var(--radius);
+      padding: 50px 40px;
+      max-width: 900px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+      border: 1px solid rgba(200, 162, 74, 0.2);
+      animation: fadeInUp 1.5s ease-out 0.3s both;
+      backdrop-filter: blur(10px);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .content-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--accent), transparent);
+    }
+
+    .intro-text {
+      font-size: 1.3rem;
+      line-height: 2;
+      color: var(--muted);
+      margin-bottom: 40px;
+      text-align: justify;
+    }
+
+    .intro-text span.highlight {
+      color: var(--accent);
+      font-weight: bold;
+    }
+
+    /* Sashen Ƙididdiga */
+    .stats-section {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin: 40px 0;
+    }
+
+    .stat-item {
+      flex: 1;
+      min-width: 180px;
+    }
+
+    .stat-number {
+      font-size: 2.5rem;
+      color: var(--accent);
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    .stat-label {
+      font-size: 1.1rem;
+      color: var(--muted);
+    }
+
+    /* Sashen Maɓallai */
+    .button-section {
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+      margin-top: 50px;
+    }
+
+    .primary-button {
+      display: inline-block;
+      padding: 18px 40px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--accent) 0%, #e0bc63 100%);
+      color: #000;
+      font-weight: bold;
+      font-size: 1.2rem;
+      text-decoration: none;
+      transition: var(--transition);
+      box-shadow: 0 10px 20px rgba(200, 162, 74, 0.3);
+      border: none;
+      cursor: pointer;
+      letter-spacing: 0.5px;
+    }
+
+    .primary-button:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 30px rgba(200, 162, 74, 0.5);
+      background: linear-gradient(135deg, #e0bc63 0%, var(--accent) 100%);
+    }
+
+    .secondary-button {
+      display: inline-block;
+      padding: 15px 35px;
+      border-radius: 999px;
+      background: transparent;
+      color: var(--accent);
+      font-weight: bold;
+      font-size: 1.1rem;
+      text-decoration: none;
+      transition: var(--transition);
+      border: 2px solid var(--accent);
+      cursor: pointer;
+    }
+
+    .secondary-button:hover {
+      background: rgba(200, 162, 74, 0.1);
+      transform: translateY(-3px);
+    }
+
+    /* Ƙarshen Shafi */
+    .opening-footer {
+      margin-top: 50px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 1rem;
+      line-height: 1.8;
+      max-width: 700px;
+      animation: fadeIn 2s ease-out 1s both;
+    }
+
+    .opening-footer span.blessing {
+      color: var(--accent);
+      font-weight: bold;
+    }
+
+    /* Annabawa */
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    /* Ƙira Mai Dacewa da Kayan Aiki */
+    @media (max-width: 768px) {
+      .logo-section h1 {
+        font-size: 2.5rem;
+      }
+
+      .logo-section .subtitle {
+        font-size: 1.2rem;
+      }
+
+      .content-card {
+        padding: 30px 20px;
+      }
+
+      .intro-text {
+        font-size: 1.1rem;
+        text-align: right;
+      }
+
+      .stat-number {
+        font-size: 2rem;
+      }
+
+      .primary-button, .secondary-button {
+        padding: 15px 30px;
+        font-size: 1rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .logo-section h1 {
+        font-size: 2rem;
+      }
+
+      .logo-section .subtitle {
+        font-size: 1rem;
+      }
+
+      .stats-section {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .stat-item {
+        min-width: 150px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Abubuwan Bayan Gida na Ado -->
+  <div class="background-elements">
+    <div class="bg-circle"></div>
+    <div class="bg-circle"></div>
+    <div class="bg-circle"></div>
+  </div>
+
+  <!-- Akwatin Bude Shafi -->
+  <div class="opening-container">
+    <div class="top-border"></div>
+    
+    <!-- Sashen Tambari/Take -->
+    <div class="logo-section">
+      <h1>ديوان الشيخ إبراهيم انياس</h1>
+      <h1>Diwani na Shaykh Ibrahim Niasse</h1>
+      <div class="subtitle">
+        زاد المسافر إلى الدار الآخرة | Kayan Tafiya zuwa Lahira
+      </div>
+    </div>
+
+    <!-- Babban Katin Abun Ciki -->
+    <div class="content-card">
+      <div class="intro-text">
+        <p>
+          بسم الله الرحمن الرحيم. الحمد لله رب العالمين، والصلاة والسلام على أشرف المرسلين، سيدنا محمد وعلى آله وصحبه أجمعين.
+        </p>
+        <p>
+          Wannan Diwani mai albarka ya ƙunshi waƙoƙi da ƙasidu na ruhaniya na <span class="highlight">Shaykh Ibrahim Niasse</span> (R.A). 
+          Suna a matsayin <span class="highlight">kayan tafiya na ruhaniya</span> ga masu tafiya zuwa Allah, kuma suna nuna sha'awar masoya 
+          zuwa ga saduwa da Manzon Allah ﷺ.
+        </p>
+        <p>
+          Diwani yana ƙunshe da <span class="highlight">Juz'o'i tara</span>, kowanne yana ɗauke da sautuka ashirin da takwas. 
+          An tsara ƙasidu bisa jigo wanda yake sauƙaƙa wa masu tafiya amfani da su a cikin tafiyarsu zuwa Allah.
+        </p>
+      </div>
+
+      <!-- Sashen Ƙididdiga -->
+      <div class="stats-section">
+        <div class="stat-item">
+          <div class="stat-number">9</div>
+          <div class="stat-label">Juz'o'i</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">252</div>
+          <div class="stat-label">Sautuka</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">1000+</div>
+          <div class="stat-label">Baitoci</div>
+        </div>
+      </div>
+
+      <!-- Sashen Maɓallai -->
+      <div class="button-section">
+        <a href="main.html" class="primary-button">🔓 Buɗe Diwani Gabaɗaya</a>
+        <a href="about.html" class="secondary-button">📖 Game da Shaykh da Mawallafi</a>
+      </div>
+    </div>
+
+    <!-- Ƙarshen Shafi -->
+    <div class="opening-footer">
+      <p>
+        An wallafa wannan aiki ne domin <span class="blessing">hidima ga addini</span> da tunawa da Allah. 
+        Na roƙi Allah Ya karɓe shi da karɓa mai kyau, Ya amfane mu da shi, Ya sanya mu cikin iyalan Alƙur'ani da Sunnah.
+      </p>
+      <p>
+        Allah Ya ba mu ikon yin amfani da wannan Diwani, Ya sanya shi zama hanyar kusantar da mu gare Shi, 
+        Ya sanya albarka a cikin sauraro da karatu.
+      </p>
+    </div>
+  </div>
+
+  <script>
+    // Ƙara abubuwa masu hulɗa
+    document.addEventListener('DOMContentLoaded', function() {
+      // Annabawa da'irori na bayan gida lokacin loda
+      const circles = document.querySelectorAll('.bg-circle');
+      circles.forEach((circle, index) => {
+        circle.style.animation = `float ${3 + index}s ease-in-out infinite alternate`;
+      });
+
+      // Ƙara CSS don annabawar iyo
+      const style = document.createElement('style');
+      style.textContent = `
+        @keyframes float {
+          0% { transform: translateY(0) translateX(0); }
+          100% { transform: translateY(${Math.random() * 40 - 20}px) translateX(${Math.random() * 40 - 20}px); }
+        }
+      `;
+      document.head.appendChild(style);
+
+      // Ƙara tasirin hovers ga katin abun ciki
+      const contentCard = document.querySelector('.content-card');
+      contentCard.addEventListener('mouseenter', function() {
+        this.style.transform = 'translateY(-10px)';
+        this.style.boxShadow = '0 35px 60px rgba(0, 0, 0, 0.6)';
+      });
+      
+      contentCard.addEventListener('mouseleave', function() {
+        this.style.transform = 'translateY(0)';
+        this.style.boxShadow = '0 25px 50px rgba(0, 0, 0, 0.5)';
+      });
+
+      // Tasirin danna maɓallai
+      const buttons = document.querySelectorAll('.primary-button, .secondary-button');
+      buttons.forEach(button => {
+        button.addEventListener('click', function(e) {
+          // Ƙirƙirar tasirin ripple
+          const ripple = document.createElement('span');
+          const rect = this.getBoundingClientRect();
+          const size = Math.max(rect.width, rect.height);
+          const x = e.clientX - rect.left - size/2;
+          const y = e.clientY - rect.top - size/2;
+          
+          ripple.style.cssText = `
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            width: ${size}px;
+            height: ${size}px;
+            top: ${y}px;
+            left: ${x}px;
+            transform: scale(0);
+            animation: ripple 0.6s ease-out;
+          `;
+          
+          this.appendChild(ripple);
+          
+          // Cire ripple bayan annabawa
+          setTimeout(() => {
+            ripple.remove();
+          }, 600);
+        });
+      });
+
+      // Ƙara annabawar ripple
+      const rippleStyle = document.createElement('style');
+      rippleStyle.textContent = `
+        @keyframes ripple {
+          to {
+            transform: scale(4);
+            opacity: 0;
+          }
+        }
+        .primary-button, .secondary-button {
+          position: relative;
+          overflow: hidden;
+        }
+      `;
+      document.head.appendChild(rippleStyle);
+    });
+  </script>
+</body>
+</html>
