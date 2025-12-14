@@ -1,1 +1,202 @@
 
+<!doctype html>
+<html lang="ar">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Harufi ا</title>
+
+<style>
+  html,body{
+    height:100%;
+    margin:0;
+    background:#ffffff;
+    font-family: "Noto Naskh Arabic","Scheherazade New","Amiri",sans-serif;
+    direction: rtl;
+    text-align: left;
+    padding: 20px;
+    line-height: 1.8;
+  }
+
+  .container{
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  h1{
+    font-size: 36px;
+    color: #111;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  .section{
+    margin-bottom: 40px;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 8px;
+    border-right: 4px solid #222;
+  }
+
+  .section-title{
+    font-size: 28px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin-bottom: 15px;
+  }
+
+  .subsection-title{
+    font-size: 22px;
+    font-weight: 700;
+    color: #2c5282;
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+
+  .content{
+    font-size: 18px;
+    color: #333;
+    line-height: 2;
+  }
+
+  .back-link{
+    display: inline-block;
+    margin-top: 30px;
+    padding: 12px 24px;
+    background: #222;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 18px;
+  }
+
+  .back-link:hover{
+    background: #444;
+  }
+
+  .hidden{
+    display: none;
+  }
+
+  @media (max-width: 600px){
+    html,body{
+      padding: 15px;
+    }
+    
+    h1{
+      font-size: 28px;
+    }
+    
+    .section-title{
+      font-size: 24px;
+    }
+    
+    .subsection-title{
+      font-size: 20px;
+    }
+    
+    .content{
+      font-size: 16px;
+    }
+  }
+</style>
+
+<script>
+  window.onload = function(){
+    // Get selection from localStorage
+    const selection = localStorage.getItem("selection");
+    
+    // Hide all sections initially
+    document.getElementById("maza-section").classList.add("hidden");
+    document.getElementById("mata-section").classList.add("hidden");
+    document.getElementById("jariri-section").classList.add("hidden");
+    
+    // Show only the selected section
+    if(selection === "maza"){
+      document.getElementById("maza-section").classList.remove("hidden");
+    } else if(selection === "mata"){
+      document.getElementById("mata-section").classList.remove("hidden");
+    } else if(selection === "jariri"){
+      document.getElementById("jariri-section").classList.remove("hidden");
+    } else {
+      // If no selection, show all sections
+      document.getElementById("maza-section").classList.remove("hidden");
+      document.getElementById("mata-section").classList.remove("hidden");
+      document.getElementById("jariri-section").classList.remove("hidden");
+    }
+  }
+</script>
+
+</head>
+<body>
+
+<div class="container">
+  <h1>Harufi <br>ا</h1>
+
+  <!-- Maza Section -->
+  <div id="maza-section" class="section">
+    <div class="section-title">Maza</div>
+    
+    <div class="subsection-title">Sanadin Cuta</div>
+    <div class="content">
+      Yana da cuta daga iskar aljanu daga tofa a ƙasa ranar Asabar kuma bai ambaci sunan Allah ba, sai ta fāɗi a kan aljani.
+    </div>
+    
+    <div class="subsection-title">Alama</div>
+    <div class="content">
+      Ya haifar masa da ɗimuwa a kansa da ciwo a gaɓoɓi da zuciya da ciwon kai ɓangare daya da kuma ciwon idanu.
+    </div>
+    
+    <div class="subsection-title">Magani</div>
+    <div class="content">
+      A yi masa hayaki da: habbatussauda, kakin zuma, lubban zakar kwana 3. A rubuta masa: Kulhuwa, Falaƙi da Nasi, akan kasko sabo 3 a wanke a bashi ya sha. Ayi masa laya wanda ya kunshi: farkon suratul Mali da farkon suratul Ali'imran da ayatul kursi da farkon suratul A’araf, kulhuwa falaƙi da nasi. Za’a rubuta su da misko da za'afaran da ma'ul wardi, layan za’a yi masa hayaƙi da habbatussauda da jawi da lubban zakar, sai ya rataya bayan an shafe shi da kakin zuma.  Magungunan da suka dace da shi sun haɗa da <br>
+شراب التفاح، شراب السفرجل، شراب الكباد
+    </div>
+  </div>
+
+  <!-- Mata Section -->
+  <div id="mata-section" class="section">
+    <div class="section-title">Mata</div>
+    
+    <div class="subsection-title">(Dalilan Cuta)</div>
+    <div class="content">
+      Ta jefa dutse ko dutse a cikin gida ko wurin da aka yashe, sai dutse ya sami aljani a kai ya cutar da shi - ko kuma ta yi wanka a gidan da babu mutane, ko ta kwana a ƙarƙashin bakin ƙofa - ko kuma ta taka teburin da aka ajiye a gaban aljanu ta kifar da shi - sai iskar mugayen aljanu ta same ta, ta jefe ta da duwatsu uku: na farko a kanta, na biyu a bayanta, na uku a ƙafarta.
+    </div>
+    
+    <div class="subsection-title">Alamar Cutar</div>
+    <div class="content">
+      Ciwon kai ɓari daya, ciwon kai da ƙashi da baya da ciwon yatsunta da gabobinta. Da kuma rauni a dukkan jikinta.
+    </div>
+    
+    <div class="subsection-title">Magani</div>
+    <div class="content">
+      A rubuta mata التهاطيل السبعة a kan ganyayyakin ɓaure bakwai koren kowane suna a kan ganyen ɗaya. Sa'an nan a sanya ganyayen a cikin kilo ɗaya na gishiri na abinci a ɗaura su a cikin ƙyalle daga tufafinta a binne a ƙarƙashin bakin ƙofar gidanta. Kuma a rubuta mata laya a kan tsawonta wanda ya ƙunshi farkon سورة الأعراف da farkon سورة الروم ayoyi uku-uku daga kowannensu da الأحروف النورانية الأربعة عشر da ayatul kursi. Ta rataya za ta warke da izinin Allah.
+    </div>
+  </div>
+
+  <!-- Jariri Section -->
+  <div id="jariri-section" class="section">
+    <div class="section-title">Jariri</div>
+    
+    <div class="subsection-title">( Dalilin Cuta )</div>
+    <div class="content">
+      Ya fadi a fuskarsa zuwa wajen gabas sai waɗanda suke tare da shi suka yi sakaci, sai wani ɗan jinni ya same shi da ɗan matsala, an taɓa shi daga Ummu Sibyan ko daga Ƙarininta.
+    </div>
+    
+    <div class="subsection-title">Alamomi</div>
+    <div class="content">
+      Ciwo da kuka da yawan hamma a kowane lokaci, launinsa yana canzawa zuwa shuɗi da rawaya a wasu lokuta da ranaku, hannunsa yana takure, yana yin hayaniya lokacin kuka, yana suma.
+    </div>
+    
+    <div class="subsection-title">Magani</div>
+    <div class="content">
+      A rubuta Hijabi na Aqfal da Surah Al-Fatiha da Ayatul Kursi da Surah Al-Kawthar da Surah Al-Ikhlas da Al-Mu'awwidhatayn. A yi hayaƙi da jawi da lubban dhakar da habbatussauda, zai warke da izinin Allah.
+    </div>
+  </div>
+
+  <a href="../index.html" class="back-link">← Koma baya</a>
+</div>
+
+</body>
+  </html>
