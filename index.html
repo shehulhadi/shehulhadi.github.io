@@ -1,179 +1,220 @@
 <!doctype html>
-<html lang="ar">
+
+<html lang="ha">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Abjad circle — clickable letters</title>
-
-<style>
-  :root{
-    --count: 28;
-    --step: calc(360deg / var(--count));
-    --radius: 210px;
-    --box-w: 62px;
-    --box-h: 62px;
-    --ring-size: 580px;
-    --bg: #ffffff;
-    --stroke: #222;
-    --font-size-letter: 28px;
-  }
-
-  html,body{
-    height:100%;
-    margin:0;
-    background:var(--bg);
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    justify-content:flex-start;
-    font-family: "Noto Naskh Arabic","Scheherazade New","Amiri",sans-serif;
-    direction: rtl;
-    text-align:center;
-  }
-
-  h1{
-    margin-top:25px;
-    font-size:32px;
-    color:#111;
-    font-weight:700;
-  }
-  
-  h4{
-    margin-top:25px;
-    font-size:32px;
-    color:#111;
-    font-weight:700;
-  }
-
-  .options{
-    margin:20px 0 30px 0;
-    font-size:20px;
-    text-align:left;
-  }
-
-  .options label{
-    margin:0 15px;
-    cursor:pointer;
-  }
-
-  a{ text-decoration:none; color:inherit; }
-
-  .stage{ width:var(--ring-size); height:var(--ring-size); position:relative; }
-
-  .ring{
-    position:absolute;
-    inset:0;
-    border-radius:50%;
-    border:6px solid var(--stroke);
-  }
-
-  .slots{ position:absolute; inset:0; }
-
-  .slot{
-    --i: 0;
-    position:absolute;
-    width:var(--box-w);
-    height:var(--box-h);
-    left:calc(50% - var(--box-w)/2);
-    top:calc(50% - var(--box-h)/2);
-    transform:
-      rotate(calc(var(--i)*var(--step)))
-      translateY(calc(-1 * var(--radius)))
-      rotate(calc(-1 * var(--i)*var(--step)));
-  }
-
-  .box{
-    width:100%; height:100%;
-    display:flex; justify-content:center; align-items:center;
-    font-size:var(--font-size-letter);
-    font-weight:700; color:#000;
-  }
-
-  @media (max-width:520px){
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Diwani na Shaykh Ibrahim Niasse</title>  <!-- Fonts -->  <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Noto+Naskh+Arabic:wght@400;600;700&display=swap" rel="stylesheet">  <style>
     :root{
-      --ring-size: 360px;
-      --radius: 135px;
-      --box-w: 48px;
-      --box-h: 48px;
-      --font-size-letter: 20px;
+      --bg:#0e0e0e;
+      --card:#151515;
+      --accent:#c8a24a;
+      --text:#f5f5f5;
+      --muted:#b5b5b5;
+      --radius:18px;
     }
-  }
-</style>
 
-<script>
-// This function saves gender selection to localStorage
-function saveSelection(type){
-  localStorage.setItem("selection", type);
-}
-</script>
+    *{ box-sizing:border-box; }
 
-</head>
-<body>
+    body{
+      margin:0;
+      font-family:'Noto Naskh Arabic','Amiri',serif;
+      background:linear-gradient(180deg,#0c0c0c,#141414);
+      color:var(--text);
+      direction:rtl;
+    }
 
-<h1>Gano cututtuka ga maza, mata da jarirai</h1>
-<h3>Zabi jinsi, sannan a danna farkon suna</h3>
+    header{
+      padding:80px 20px 60px;
+      text-align:center;
+      background:radial-gradient(circle at top,#1d1d1d,#0c0c0c);
+    }
 
-<div class="options">
-  <label><input type="radio" name="opt" value="maza" onclick="saveSelection('maza')"> Maza</label><br>
-  <label><input type="radio" name="opt" value="mata" onclick="saveSelection('mata')"> Mata</label><br>
-  <label><input type="radio" name="opt" value="jariri" onclick="saveSelection('jariri')"> Jariri namiji ko mace</label>
-</div>
-  
-<div class="stage">
-  <div class="ring"></div>
+    header h1{
+      font-size:42px;
+      margin:0 0 10px;
+      color:var(--accent);
+      letter-spacing:1px;
+    }
 
-  <div class="slots">
-    <!-- Add "letter-link" class to each <a> tag -->
-    <div class="slot" style="--i:0"><a href="pages/ghayn.html" class="box letter-link">غ</a></div>
-    <div class="slot" style="--i:1"><a href="pages/zha.html" class="box letter-link">ظ</a></div>
-    <div class="slot" style="--i:2"><a href="pages/dad.html" class="box letter-link">ض</a></div>
-    <div class="slot" style="--i:3"><a href="pages/dhal.html" class="box letter-link">ذ</a></div>
-    <div class="slot" style="--i:4"><a href="pages/kha.html" class="box letter-link">خ</a></div>
-    <div class="slot" style="--i:5"><a href="pages/tha.html" class="box letter-link">ث</a></div>
-    <div class="slot" style="--i:6"><a href="pages/ta2.html" class="box letter-link">ت</a></div>
-    <div class="slot" style="--i:7"><a href="pages/shin.html" class="box letter-link">ش</a></div>
-    <div class="slot" style="--i:8"><a href="pages/ra.html" class="box letter-link">ر</a></div>
-    <div class="slot" style="--i:9"><a href="pages/qaf.html" class="box letter-link">ق</a></div>
-    <div class="slot" style="--i:10"><a href="pages/sad.html" class="box letter-link">ص</a></div>
-    <div class="slot" style="--i:11"><a href="pages/fa.html" class="box letter-link">ف</a></div>
-    <div class="slot" style="--i:12"><a href="pages/ayn.html" class="box letter-link">ع</a></div>
-    <div class="slot" style="--i:13"><a href="pages/sin.html" class="box letter-link">س</a></div>
-    <div class="slot" style="--i:14"><a href="pages/nun.html" class="box letter-link">ن</a></div>
-    <div class="slot" style="--i:15"><a href="pages/mim.html" class="box letter-link">م</a></div>
-    <div class="slot" style="--i:16"><a href="pages/lam.html" class="box letter-link">ل</a></div>
-    <div class="slot" style="--i:17"><a href="pages/kaf.html" class="box letter-link">ك</a></div>
-    <div class="slot" style="--i:18"><a href="pages/ya.html" class="box letter-link">ي</a></div>
-    <div class="slot" style="--i:19"><a href="pages/ta.html" class="box letter-link">ط</a></div>
-    <div class="slot" style="--i:20"><a href="pages/ha2.html" class="box letter-link">ح</a></div>
-    <div class="slot" style="--i:21"><a href="pages/zal.html" class="box letter-link">ز</a></div>
-    <div class="slot" style="--i:22"><a href="pages/waw.html" class="box letter-link">و</a></div>
-    <div class="slot" style="--i:23"><a href="pages/ha.html" class="box letter-link">ه</a></div>
-    <div class="slot" style="--i:24"><a href="pages/dal.html" class="box letter-link">د</a></div>
-    <div class="slot" style="--i:25"><a href="pages/jim.html" class="box letter-link">ج</a></div>
-    <div class="slot" style="--i:26"><a href="pages/ba.html" class="box letter-link">ب</a></div>
-    <div class="slot" style="--i:27"><a href="pages/alif.html" class="box letter-link">ا</a></div>
+    header p{
+      font-size:20px;
+      max-width:720px;
+      margin:0 auto;
+      color:var(--muted);
+      line-height:1.9;
+    }
+
+    main{
+      max-width:1200px;
+      margin:0 auto;
+      padding:40px 20px 80px;
+    }
+
+    .juz-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:28px;
+    }
+
+    .juz-card{
+      background:linear-gradient(180deg,#1b1b1b,#121212);
+      border-radius:var(--radius);
+      padding:30px 25px;
+      text-align:center;
+      box-shadow:0 20px 40px rgba(0,0,0,.45);
+      transition:transform .4s ease, box-shadow .4s ease;
+      border:1px solid rgba(200,162,74,.15);
+    }
+
+    .juz-card:hover{
+      transform:translateY(-6px);
+      box-shadow:0 30px 60px rgba(0,0,0,.6);
+    }
+
+    .juz-number{
+      font-size:22px;
+      color:var(--accent);
+      margin-bottom:8px;
+    }
+
+    .juz-title{
+      font-size:26px;
+      margin-bottom:15px;
+    }
+
+    .juz-desc{
+      font-size:17px;
+      color:var(--muted);
+      margin-bottom:25px;
+      line-height:1.8;
+    }
+
+    .juz-card a{
+      display:inline-block;
+      padding:12px 28px;
+      border-radius:999px;
+      background:var(--accent);
+      color:#000;
+      font-weight:700;
+      text-decoration:none;
+      transition:background .3s ease;
+    }
+
+    .juz-card a:hover{
+      background:#e0bc63;
+    }
+
+    footer{
+      text-align:center;
+      padding:40px 20px;
+      background:#0c0c0c;
+      color:var(--muted);
+      font-size:15px;
+      line-height:1.8;
+    }
+
+    footer span{ color:var(--accent); }
+
+    @media(max-width:600px){
+      header h1{ font-size:32px; }
+      header p{ font-size:18px; }
+    }
+  </style></head>
+<body><header>
+  <h1>Diwani na Shaykh Ibrahim Niasse</h1>
+  <p>
+    Wannan shafi an keɓe shi domin sauraron Diwani da ƙasidu na
+    Shaykh Ibrahim Niasse (R.A). An tsara shi cikin Juz'i guda tara,
+    kowanne yana ɗauke da sautuka ashirin da takwas.
+  </p>
+</header><main>
+  <section class="juz-grid"><div class="juz-card">
+  <div class="juz-number">Juz'i na 1</div>
+  <div class="juz-title">Farkon Diwani</div>
+  <div class="juz-desc">
+    Ƙasidu na farko domin buɗe zukata da shirya niyya.
   </div>
+  <a href="juz/juz1.html">Buɗe Juz'i</a>
 </div>
 
-<script>
-// Wait for page to load completely
-window.addEventListener('DOMContentLoaded', function() {
-  // Add click event to all letter links
-  document.querySelectorAll(".letter-link").forEach(link => {
-    link.addEventListener("click", function(e){
-      // Check if any gender is selected
-      const selected = document.querySelector('input[name="opt"]:checked');
-      
-      if (!selected) {
-        // Prevent navigation and show alert
-        e.preventDefault();
-        alert("A fara zabar jinsi kafin a danna harafi.");
-        return false;
-      }
-    });
-  });
-});
-</script>
+<div class="juz-card">
+  <div class="juz-number">Juz'i na 2</div>
+  <div class="juz-title">Salati da Yabo</div>
+  <div class="juz-desc">
+    Sautukan salati da yabo ga Manzon Allah ﷺ.
+  </div>
+  <a href="juz/juz2.html">Buɗe Juz'i</a>
+</div>
 
-</body>
-  </html>
+<div class="juz-card">
+  <div class="juz-number">Juz'i na 3</div>
+  <div class="juz-title">Fayḍa da Maʿarifa</div>
+  <div class="juz-desc">
+    Ƙasidu masu bayyana asirin fayḍa da kusanci.
+  </div>
+  <a href="juz/juz3.html">Buɗe Juz'i</a>
+</div>
+
+ <div class="juz-card">
+  <div class="juz-number">Juz'i na 4</div>
+  <div class="juz-title">Ƙauna da Shaida</div>
+  <div class="juz-desc">
+    Ƙasidu masu bayyana ƙaunar Annabi ﷺ da shaidar gaskiya.
+  </div>
+  <a href="juz/juz4.html">Buɗe Juz'i</a>
+</div>
+
+<div class="juz-card">
+  <div class="juz-number">Juz'i na 5</div>
+  <div class="juz-title">Tasbihi da Istighfari</div>
+  <div class="juz-desc">
+    Sautukan tasbihi, istighfari da tsarkake zuciya.
+  </div>
+  <a href="juz/juz5.html">Buɗe Juz'i</a>
+</div>
+
+<div class="juz-card">
+  <div class="juz-number">Juz'i na 6</div>
+  <div class="juz-title">Ilmi da Hikima</div>
+  <div class="juz-desc">
+    Ƙasidu masu ilmantarwa da buɗe basira da fahimta.
+  </div>
+  <a href="juz/juz6.html">Buɗe Juz'i</a>
+</div>
+
+<div class="juz-card">
+  <div class="juz-number">Juz'i na 7</div>
+  <div class="juz-title">Fayḍar Tijjaniyya</div>
+  <div class="juz-desc">
+    Ƙasidu na fayḍa, sirri da albarkar silsila.
+  </div>
+  <a href="juz/juz7.html">Buɗe Juz'i</a>
+</div>
+
+<div class="juz-card">
+  <div class="juz-number">Juz'i na 8</div>
+  <div class="juz-title">Shauƙi da Kusanci</div>
+  <div class="juz-desc">
+    Sautuka masu motsa zuciya zuwa shauƙi da kusanci ga Allah.
+  </div>
+  <a href="juz/juz8.html">Buɗe Juz'i</a>
+</div>
+
+<div class="juz-card">
+  <div class="juz-number">Juz'i na 9</div>
+  <div class="juz-title">Kammala da Addu'a</div>
+  <div class="juz-desc">
+    Ƙasidu na karshe domin addu'a, salama da kammala Diwani.
+  </div>
+  <a href="juz/juz9.html">Buɗe Juz'i</a>
+</div>
+    
+  </section>
+</main><footer>
+  <p>
+    An wallafa wannan aiki ne domin <span>khidima</span> da tunawa.
+    Allah Ya sanya albarka a sauraro da niyya.
+  </p>
+</footer></body>
+</html>
