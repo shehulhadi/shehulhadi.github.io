@@ -103,18 +103,37 @@
 </style>
 
 <script>
-// Get gender from URL
-const urlParams = new URLSearchParams(window.location.search);
-const gender = urlParams.get('gender');
-
-// If no gender in URL, check localStorage
-const selection = gender || localStorage.getItem("selection");
-
-if(!selection) {
-  alert("Please select gender first");
-  window.location.href = "../index.html";
-}
+  window.onload = function(){
+    // Get selection from localStorage
+    const selection = localStorage.getItem("selection");
+    
+    console.log("Selected gender from localStorage:", selection); // For debugging
+    
+    // Hide all sections initially
+    document.getElementById("maza-section").classList.add("hidden");
+    document.getElementById("mata-section").classList.add("hidden");
+    document.getElementById("jariri-section").classList.add("hidden");
+    
+    // Check if selection exists and is valid
+    if(selection === "maza"){
+      document.getElementById("maza-section").classList.remove("hidden");
+      console.log("Showing Maza section");
+    } else if(selection === "mata"){
+      document.getElementById("mata-section").classList.remove("hidden");
+      console.log("Showing Mata section");
+    } else if(selection === "jariri"){
+      document.getElementById("jariri-section").classList.remove("hidden");
+      console.log("Showing Jariri section");
+    } else {
+      // If no selection, show ALL sections
+      document.getElementById("maza-section").classList.remove("hidden");
+      document.getElementById("mata-section").classList.remove("hidden");
+      document.getElementById("jariri-section").classList.remove("hidden");
+      console.log("No gender selected, showing ALL sections");
+    }
+  }
 </script>
+  
 </head>
 <body>
 
