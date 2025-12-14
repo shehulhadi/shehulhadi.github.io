@@ -107,19 +107,7 @@
     // Get selection from localStorage
     const selection = localStorage.getItem("selection");
     
-    console.log("DEBUG - Gender selection:", selection);
-    
-    // Check if we have a valid selection
-    if (!selection || (selection !== "maza" && selection !== "mata" && selection !== "jariri")) {
-      console.warn("No valid gender selected in localStorage");
-      // Show all sections if no valid selection
-      document.getElementById("maza-section").classList.remove("hidden");
-      document.getElementById("mata-section").classList.remove("hidden");
-      document.getElementById("jariri-section").classList.remove("hidden");
-      return;
-    }
-    
-    // Hide all sections first
+    // Hide all sections initially
     document.getElementById("maza-section").classList.add("hidden");
     document.getElementById("mata-section").classList.add("hidden");
     document.getElementById("jariri-section").classList.add("hidden");
@@ -131,9 +119,16 @@
       document.getElementById("mata-section").classList.remove("hidden");
     } else if(selection === "jariri"){
       document.getElementById("jariri-section").classList.remove("hidden");
+    } else {
+      // If no selection, show all sections
+      document.getElementById("maza-section").classList.remove("hidden");
+      document.getElementById("mata-section").classList.remove("hidden");
+      document.getElementById("jariri-section").classList.remove("hidden");
     }
   });
-    </script>
+</script>
+  
+
   
 </head>
 <body>
