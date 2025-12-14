@@ -101,10 +101,22 @@
 </style>
 
 <script>
-// Save selected option
-function saveSelection(type){
-  localStorage.setItem("selection", type);
-}
+document.querySelectorAll(".letter-link").forEach(link => {
+  link.addEventListener("click", function(e){
+    const selected = document.querySelector('input[name="opt"]:checked');
+    if (!selected) {
+      e.preventDefault();
+      alert("A fara zabar jinsi kafin a danna harafi.");
+      return false;
+    }
+    
+    // Force the link to include gender parameter
+    const gender = selected.value;
+    const page = this.getAttribute('href');
+    window.location.href = `${page}?gender=${gender}`;
+    e.preventDefault(); // Prevent default navigation
+  });
+});
 </script>
 
 </head>
