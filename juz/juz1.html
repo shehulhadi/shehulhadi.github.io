@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="ha">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Juz'i na 1 – Diwani na Shaykh Ibrahim Niasse</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Noto+Naskh+Arabic:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --bg:#0e0e0e;
+  --card:#151515;
+  --accent:#c8a24a;
+  --text:#f5f5f5;
+  --muted:#b5b5b5;
+  --radius:16px;
+}
+
+*{box-sizing:border-box;}
+
+body{
+  margin:0;
+  font-family:'Noto Naskh Arabic','Amiri',serif;
+  background:linear-gradient(180deg,#0c0c0c,#141414);
+  color:var(--text);
+  direction:rtl;
+}
+
+header{
+  padding:60px 20px 40px;
+  text-align:center;
+}
+
+header h1{
+  color:var(--accent);
+  font-size:36px;
+  margin-bottom:10px;
+}
+
+header p{
+  color:var(--muted);
+  font-size:18px;
+  max-width:700px;
+  margin:0 auto;
+  line-height:1.9;
+}
+
+main{
+  max-width:900px;
+  margin:0 auto;
+  padding:20px 15px 80px;
+}
+
+.audio-list{
+  display:grid;
+  gap:18px;
+}
+
+.audio-card{
+  background:linear-gradient(180deg,#1b1b1b,#121212);
+  border-radius:var(--radius);
+  padding:18px 20px;
+  border:1px solid rgba(200,162,74,.15);
+  box-shadow:0 15px 30px rgba(0,0,0,.4);
+}
+
+.audio-title{
+  font-size:18px;
+  margin-bottom:10px;
+  color:var(--accent);
+  text-align:left;
+}
+
+.audio-controls{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+
+audio{
+  width:100%;
+}
+
+.download-btn{
+  align-self:flex-start;
+  padding:8px 18px;
+  border-radius:999px;
+  background:var(--accent);
+  color:#000;
+  font-weight:700;
+  text-decoration:none;
+  font-size:14px;
+}
+
+.download-btn:hover{
+  background:#e0bc63;
+}
+
+.back-link{
+  display:inline-block;
+  margin-top:40px;
+  padding:10px 26px;
+  border-radius:999px;
+  background:#222;
+  color:var(--text);
+  text-decoration:none;
+  border:1px solid rgba(200,162,74,.3);
+}
+
+.back-link:hover{
+  background:#2a2a2a;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>Juz'i na 1</h1>
+  <p>
+    Wannan Juz'i yana ɗauke da harufa 28
+  </p>
+</header>
+
+<main>
+
+<section class="audio-list">
+
+<!-- AUDIO 1 -->
+<div class="audio-card">
+  <div class="audio-title">Harful Alif</div>
+  <div class="audio-controls">
+    <audio controls src="audio/01.mp3"></audio>
+    <a class="download-btn" href="audio/01.mp3" download>⬇ Sauke sauti</a>
+  </div>
+</div>
+
+<!-- AUDIO 2 -->
+<div class="audio-card">
+  <div class="audio-title">Harful Ba</div>
+  <div class="audio-controls">
+    <audio controls src="audio/02.mp3"></audio>
+    <a class="download-btn" href="audio/02.mp3" download>⬇ Sauke sauti</a>
+  </div>
+</div>
+
+<!-- Repeat pattern until 28 -->
+
+<!-- AUDIO 28 -->
+<div class="audio-card">
+  <div class="audio-title">Harful Gayn</div>
+  <div class="audio-controls">
+    <audio controls src="audio/28.mp3"></audio>
+    <a class="download-btn" href="audio/28.mp3" download>⬇ Sauke sauti</a>
+  </div>
+</div>
+
+</section>
+
+<a class="back-link" href="../index.html">⟵ Komawa Babban Shafi</a>
+
+</main>
+
+</body>
+</html>
