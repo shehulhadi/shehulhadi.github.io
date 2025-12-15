@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="ha">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Game da Wannan Aiki</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Noto+Naskh+Arabic:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #0e0e0e;
+      --card: #151515;
+      --accent: #c8a24a;
+      --text: #f5f5f5;
+      --muted: #b5b5b5;
+      --radius: 18px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Noto Naskh Arabic', 'Amiri', serif;
+      background: linear-gradient(180deg, #080808, #121212, #080808);
+      color: var(--text);
+      direction: rtl;
+      min-height: 100vh;
+      padding: 30px 15px;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .card {
+      background: linear-gradient(145deg, rgba(21,21,21,0.95), rgba(10,10,10,0.95));
+      border-radius: var(--radius);
+      padding: 50px 40px;
+      border: 1px solid rgba(200,162,74,0.25);
+      box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+      animation: fadeInUp 1.4s ease-out;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 2.8rem;
+      color: var(--accent);
+      margin-bottom: 30px;
+    }
+
+    h1::after {
+      content: '';
+      display: block;
+      width: 120px;
+      height: 3px;
+      margin: 15px auto 0;
+      background: linear-gradient(90deg, transparent, var(--accent), transparent);
+    }
+
+    .text {
+      font-size: 1.2rem;
+      line-height: 2.1;
+      color: var(--muted);
+      text-align: left;
+    }
+
+    .text p {
+      margin-bottom: 25px;
+    }
+
+    .highlight {
+      color: var(--accent);
+      font-weight: bold;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-top: 40px;
+      text-decoration: none;
+      color: var(--accent);
+      font-weight: bold;
+      border: 2px solid var(--accent);
+      padding: 12px 28px;
+      border-radius: 999px;
+      transition: 0.4s ease;
+    }
+
+    .back-link:hover {
+      background: rgba(200,162,74,0.15);
+      transform: translateY(-3px);
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 600px) {
+      .card {
+        padding: 30px 20px;
+      }
+      h1 {
+        font-size: 2.2rem;
+      }
+      .text {
+        font-size: 1.05rem;
+        text-align: center;
+      }
+    }
+  .text a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s ease;
+}
+
+.text a:hover {
+  text-decoration: underline;
+  opacity: 0.85;
+}
+  .fb-button {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 22px;
+  border-radius: 999px;
+  border: 2px solid var(--accent);
+  color: var(--accent);
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.4s ease;
+  background: transparent;
+}
+
+.fb-button:hover {
+  background: rgba(200,162,74,0.15);
+  transform: translateY(-2px);
+}
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="card">
+
+      <h1>Game da Wannan Aiki</h1>
+
+      <div class="text">
+
+
+        <p>
+          Wannan aiki ba na kasuwanci ba ne, kuma ba na neman suna ko daukaka.
+          Aiki ne na <span class="highlight">hidima </span> ga Faira
+        </p>
+
+        <p>
+          An tsara wannan shafi ne domin ya zama kayan tafiya <span class="highlight">hadara</span>
+          ga masu neman Allah
+        </p>
+
+        <p>
+          Idan wannan aiki ya amfanar da kai, to alhamdulillah
+          <br><br>Amma za'a iya bada gudummawa idan da niyyar hakan
+          <br><br>Shehu ya ƙara faila
+        </p>
+<br><a href="https://www.facebook.com/share/1AYvSsG4sb/" 
+   class="fb-button" 
+   target="_blank" 
+   rel="noopener noreferrer">
+   Tuntuɓe mu a Facebook
+</a>
+
+        <a href="index.html" class="back-link">← Komawa Diwani</a>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>
