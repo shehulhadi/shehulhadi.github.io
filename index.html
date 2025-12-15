@@ -337,6 +337,34 @@
         min-width: 150px;
       }
     }
+  .shaykh-image-container {
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.shaykh-image-container img {
+  width: 220px;
+  max-width: 70%;
+  border-radius: 50%;
+  border: 3px solid rgba(200, 162, 74, 0.6);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6);
+  transition: transform 0.6s ease, box-shadow 0.6s ease;
+}
+
+.shaykh-image-container img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 25px 45px rgba(200, 162, 74, 0.4);
+}
+
+.shaykh-caption {
+  margin-top: 12px;
+  font-size: 1.1rem;
+  color: var(--accent);
+  font-family: 'Amiri', serif;
+}
+  .shaykh-image-container {
+  animation: fadeIn 2s ease-out 0.6s both;
+}
   </style>
 </head>
 <body>
@@ -354,6 +382,10 @@
     <!-- Sashen Tambari/Take -->
     <div class="logo-section">
       <h1>ديوان الشيخ إبراهيم انياس</h1>
+      <div class="shaykh-image-container">
+  <img src="ibrahim-niasse.jpeg" alt="Shaykh Ibrahim Niasse (R.A.)">
+  <p class="shaykh-caption">الشيخ إبراهيم انياس رضي الله عنه</p>
+</div>
       <h1>Diwani na Shaykh Ibrahim Niasse</h1>
     </div>
 
@@ -385,7 +417,7 @@
       <!-- Sashen Maɓallai -->
       <div class="button-section">
         <a href="main.html" class="primary-button">Buɗe Diwani</a>
-        <a href="about.html" class="secondary-button">Game da Ni</a>
+        <p href="about.html" class="secondary-button">Game da Ni</p>
       </div>
     </div>
 
@@ -478,4 +510,4 @@
     });
   </script>
 </body>
-      </html>
+        </html>
