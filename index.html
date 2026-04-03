@@ -1,542 +1,67 @@
-<!doctype html>
-<html lang="ha">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <link rel="manifest" href="/manifest.json">
-<meta name="theme-color" content="#000000">
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Diwani na Shaykh Ibrahim Niasse</title>
-  <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Noto+Naskh+Arabic:wght@400;600;700&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --bg: #0e0e0e;
-      --card: #151515;
-      --accent: #c8a24a;
-      --text: #f5f5f5;
-      --muted: #b5b5b5;
-      --radius: 18px;
-      --transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      font-family: 'Noto Naskh Arabic', 'Amiri', serif;
-      background: linear-gradient(180deg, #080808 0%, #121212 50%, #080808 100%);
-      color: var(--text);
-      direction: rtl;
-      min-height: 100vh;
-      overflow-x: hidden;
-    }
-
-    /* Abubuwan Bayan Gida na Ado */
-    .background-elements {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: -1;
-      opacity: 0.15;
-    }
-
-    .bg-circle {
-      position: absolute;
-      border-radius: 50%;
-      background: radial-gradient(circle, var(--accent) 0%, transparent 70%);
-    }
-
-    .bg-circle:nth-child(1) {
-      width: 300px;
-      height: 300px;
-      top: -100px;
-      left: -100px;
-      opacity: 0.1;
-    }
-
-    .bg-circle:nth-child(2) {
-      width: 200px;
-      height: 200px;
-      bottom: -50px;
-      right: 10%;
-      opacity: 0.08;
-    }
-
-    .bg-circle:nth-child(3) {
-      width: 150px;
-      height: 150px;
-      top: 30%;
-      left: 15%;
-      opacity: 0.05;
-    }
-
-    /* Babban Akwati */
-    .opening-container {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      padding: 20px;
-      position: relative;
-    }
-
-    /* Iyakar Sama ta Ado */
-    .top-border {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 4px;
-      background: linear-gradient(90deg, var(--accent) 0%, transparent 50%, var(--accent) 100%);
-    }
-
-    /* Sashen Tambari/Take */
-    .logo-section {
-      text-align: center;
-      margin-bottom: 40px;
-      max-width: 800px;
-      animation: fadeInDown 1.2s ease-out;
-    }
-
-    .logo-section h1 {
-      font-size: 3.5rem;
-      color: var(--accent);
-      margin-bottom: 15px;
-      text-shadow: 0 5px 15px rgba(200, 162, 74, 0.3);
-      letter-spacing: 1px;
-      position: relative;
-      display: inline-block;
-    }
-
-    .logo-section h1::after {
-      content: '';
-      position: absolute;
-      bottom: -10px;
-      right: 25%;
-      width: 50%;
-      height: 3px;
-      background: linear-gradient(90deg, transparent, var(--accent), transparent);
-    }
-
-    .logo-section .subtitle {
-      font-size: 1.4rem;
-      color: var(--muted);
-      line-height: 1.6;
-      margin-top: 20px;
-    }
-
-    /* Babban Katin Abun Ciki */
-    .content-card {
-      background: linear-gradient(145deg, rgba(21, 21, 21, 0.9), rgba(10, 10, 10, 0.9));
-      border-radius: var(--radius);
-      padding: 50px 40px;
-      max-width: 900px;
-      width: 100%;
-      text-align: center;
-      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
-      border: 1px solid rgba(200, 162, 74, 0.2);
-      animation: fadeInUp 1.5s ease-out 0.3s both;
-      backdrop-filter: blur(10px);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .content-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 2px;
-      background: linear-gradient(90deg, transparent, var(--accent), transparent);
-    }
-
-    .intro-text {
-      font-size: 1.3rem;
-      line-height: 2;
-      color: var(--muted);
-      margin-bottom: 40px;
-      text-align: left;
-    }
-
-    .intro-text span.highlight {
-      color: var(--accent);
-      font-weight: bold;
-    }
-
-    /* Sashen Ƙididdiga */
-    .stats-section {
-      display: flex;
-      justify-content: space-around;
-      flex-wrap: wrap;
-      gap: 20px;
-      margin: 40px 0;
-    }
-
-    .stat-item {
-      flex: 1;
-      min-width: 180px;
-    }
-
-    .stat-number {
-      font-size: 2.5rem;
-      color: var(--accent);
-      font-weight: bold;
-      margin-bottom: 5px;
-    }
-
-    .stat-label {
-      font-size: 1.1rem;
-      color: var(--muted);
-    }
-
-    /* Sashen Maɓallai */
-    .button-section {
-      display: flex;
-      flex-direction: column;
-      gap: 25px;
-      margin-top: 50px;
-    }
-
-    .primary-button {
-      display: inline-block;
-      padding: 18px 40px;
-      border-radius: 999px;
-      background: linear-gradient(135deg, var(--accent) 0%, #e0bc63 100%);
-      color: #000;
-      font-weight: bold;
-      font-size: 1.2rem;
-      text-decoration: none;
-      transition: var(--transition);
-      box-shadow: 0 10px 20px rgba(200, 162, 74, 0.3);
-      border: none;
-      cursor: pointer;
-      letter-spacing: 0.5px;
-    }
-
-    .primary-button:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 15px 30px rgba(200, 162, 74, 0.5);
-      background: linear-gradient(135deg, #e0bc63 0%, var(--accent) 100%);
-    }
-
-    .secondary-button {
-      display: inline-block;
-      padding: 15px 35px;
-      border-radius: 999px;
-      background: transparent;
-      color: var(--accent);
-      font-weight: bold;
-      font-size: 1.1rem;
-      text-decoration: none;
-      transition: var(--transition);
-      border: 2px solid var(--accent);
-      cursor: pointer;
-    }
-
-    .secondary-button:hover {
-      background: rgba(200, 162, 74, 0.1);
-      transform: translateY(-3px);
-    }
-
-    /* Ƙarshen Shafi */
-    .opening-footer {
-      margin-top: 50px;
-      text-align: center;
-      color: var(--muted);
-      font-size: 1rem;
-      line-height: 1.8;
-      max-width: 700px;
-      animation: fadeIn 2s ease-out 1s both;
-    }
-
-    .opening-footer span.blessing {
-      color: var(--accent);
-      font-weight: bold;
-    }
-
-    /* Annabawa */
-    @keyframes fadeInDown {
-      from {
-        opacity: 0;
-        transform: translateY(-30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-      }
-      to {
-        opacity: 1;
-      }
-    }
-
-    /* Ƙira Mai Dacewa da Kayan Aiki */
-    @media (max-width: 768px) {
-      .logo-section h1 {
-        font-size: 2.5rem;
-      }
-
-      .logo-section .subtitle {
-        font-size: 1.2rem;
-      }
-
-      .content-card {
-        padding: 30px 20px;
-      }
-
-      .intro-text {
-        font-size: 1.1rem;
-        text-align: center;
-      }
-
-      .stat-number {
-        font-size: 2rem;
-      }
-
-      .primary-button, .secondary-button {
-        padding: 15px 30px;
-        font-size: 1rem;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .logo-section h1 {
-        font-size: 2rem;
-      }
-
-      .logo-section .subtitle {
-        font-size: 1rem;
-      }
-
-      .stats-section {
-        flex-direction: column;
-        align-items: center;
-      }
-
-      .stat-item {
-        min-width: 150px;
-      }
-    }
-  .shaykh-image-container {
-  text-align: center;
-  margin-bottom: 35px;
-}
-
-.shaykh-image-container img {
-  width: 220px;
-  max-width: 70%;
-  border-radius: 50%;
-  border: 3px solid rgba(200, 162, 74, 0.6);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6);
-  transition: transform 0.6s ease, box-shadow 0.6s ease;
-}
-
-.shaykh-image-container img:hover {
-  transform: scale(1.05);
-  box-shadow: 0 25px 45px rgba(200, 162, 74, 0.4);
-}
-
-.shaykh-caption {
-  margin-top: 12px;
-  font-size: 1.1rem;
-  color: var(--accent);
-  font-family: 'Amiri', serif;
-}
-  .shaykh-image-container {
-  animation: fadeIn 2s ease-out 0.6s both;
-}
-  .footer-links {
-  margin-top: 15px;
-  font-size: 1rem;
-}
-
-.footer-links a {
-  color: var(--accent);
-  text-decoration: none;
-  font-weight: bold;
-  transition: 0.4s ease;
-}
-
-.footer-links a:hover {
-  text-decoration: underline;
-  opacity: 0.85;
-}
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UniConnect — University Communication Platform</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/roles.css">
 </head>
 <body>
-  <!-- Abubuwan Bayan Gida na Ado -->
-  <div class="background-elements">
-    <div class="bg-circle"></div>
-    <div class="bg-circle"></div>
-    <div class="bg-circle"></div>
-  </div>
-
-  <!-- Akwatin Bude Shafi -->
-  <div class="opening-container">
-    <div class="top-border"></div>
-    
-    <!-- Sashen Tambari/Take -->
-    <div class="logo-section">
-      <h1>Diwani na Shaykh Ibrahim Niasse</h1>
-      <div class="shaykh-image-container">
-  <img src="ibrahim-niasse.jpeg" alt="Shaykh Ibrahim Niasse (R.A.)">
-  <p class="shaykh-caption">الشيخ إبراهيم انياس رضي الله عنه</p>
-</div>
-      
+  <section class="landing-hero">
+    <h1 class="landing-hero__title">UniConnect</h1>
+    <p class="landing-hero__subtitle">
+      Your university, connected. One platform for courses, messaging, assignments, and announcements — built for students, lecturers, and leadership.
+    </p>
+    <div class="landing-hero__actions">
+      <a href="auth.html" class="btn btn--primary btn--lg">Get Started</a>
+      <a href="auth.html#login" class="btn btn--secondary btn--lg">Sign In</a>
     </div>
+  </section>
 
-    <!-- Babban Katin Abun Ciki -->
-    <div class="content-card">
-      <div class="intro-text">
-        <p>
-          بسم الله الرحمن الرحيم <br><br>
-          اللَّهُمَّ صَلِّ عَلَىٰ سَيِّدِنَا مُحَمَّدٍ
-الْفَاتِحِ لِمَا أُغْلِقَ،
-وَالْخَاتِمِ لِمَا سَبَقَ،
-نَاصِرِ الْحَقِّ بِالْحَقِّ،
-وَالْهَادِي إِلَىٰ صِرَاطِكَ الْمُسْتَقِيمِ،
-وَعَلَىٰ آلِهِ حَقَّ قَدْرِهِ وَمِقْدَارِهِ الْعَظِيمِ
-
-        </p>
-        <br>
-        <p>
-          Wannan shafi mai albarka ya ƙunshi diwani na <span class="highlight">Shaykh Ibrahim Niasse</span> (R.A). 
-          A matsayin <span class="highlight">kayan tafiya na hadara</span> ga masu tafiya zuwa Allah, kuma tabbatar da 
-          soyayyar Manzon Allah S.A.W
-        </p>
-        <br>
-        <p>
-          Yana ƙunshe da <span class="highlight">Juz'o'i tara</span>, kowanne yana ɗauke da sautuka ashirin da takwas
-        </p>
+  <section class="landing-features">
+    <h2 class="landing-features__title">Everything You Need</h2>
+    <div class="feature-grid">
+      <div class="feature-card">
+        <div class="feature-card__icon">&#128172;</div>
+        <h3 class="feature-card__title">Real-time Messaging</h3>
+        <p class="feature-card__text">Course channels, department groups, and direct messages — all in one place.</p>
       </div>
-
-      <!-- Sashen Maɓallai -->
-      <div class="button-section">
-        <a href="main.html" class="primary-button">Buɗe Diwani</a>
+      <div class="feature-card">
+        <div class="feature-card__icon">&#128218;</div>
+        <h3 class="feature-card__title">Course Materials</h3>
+        <p class="feature-card__text">Access lecture notes, slides, and resources uploaded by your lecturers.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-card__icon">&#128221;</div>
+        <h3 class="feature-card__title">Assignments & Grades</h3>
+        <p class="feature-card__text">Submit assignments, track deadlines, and view grades when released.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-card__icon">&#128227;</div>
+        <h3 class="feature-card__title">Announcements</h3>
+        <p class="feature-card__text">Stay updated with department and university-wide announcements.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-card__icon">&#128202;</div>
+        <h3 class="feature-card__title">Analytics</h3>
+        <p class="feature-card__text">Lecturers and leadership get insights on submissions, attendance, and engagement.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-card__icon">&#129302;</div>
+        <h3 class="feature-card__title">AI Helper</h3>
+        <p class="feature-card__text">Students get an AI assistant to help with course-related questions.</p>
       </div>
     </div>
+  </section>
 
-    <!-- Ƙarshen Shafi -->
-    <div class="opening-footer">
-  <p>
-    An wallafa wannan aiki ne domin <span class="blessing">hidima ga Faira</span>
-  </p>
+  <footer style="text-align:center;padding:var(--sp-8) var(--sp-4);color:var(--c-text-muted);font-size:0.875rem;border-top:1px solid var(--c-border)">
+    &copy; 2026 UniConnect. All rights reserved.
+  </footer>
 
-  <p class="footer-links">
-    <a href="about.html">Game da Wannan Aiki</a>
-  </p>
-</div>
-  </div>
-
-  <script>
-    // Ƙara abubuwa masu hulɗa
-    document.addEventListener('DOMContentLoaded', function() {
-      // Annabawa da'irori na bayan gida lokacin loda
-      const circles = document.querySelectorAll('.bg-circle');
-      circles.forEach((circle, index) => {
-        circle.style.animation = `float ${3 + index}s ease-in-out infinite alternate`;
-      });
-
-      // Ƙara CSS don annabawar iyo
-      const style = document.createElement('style');
-      style.textContent = `
-        @keyframes float {
-          0% { transform: translateY(0) translateX(0); }
-          100% { transform: translateY(${Math.random() * 40 - 20}px) translateX(${Math.random() * 40 - 20}px); }
-        }
-      `;
-      document.head.appendChild(style);
-
-      // Ƙara tasirin hovers ga katin abun ciki
-      const contentCard = document.querySelector('.content-card');
-      contentCard.addEventListener('mouseenter', function() {
-        this.style.transform = 'translateY(-10px)';
-        this.style.boxShadow = '0 35px 60px rgba(0, 0, 0, 0.6)';
-      });
-      
-      contentCard.addEventListener('mouseleave', function() {
-        this.style.transform = 'translateY(0)';
-        this.style.boxShadow = '0 25px 50px rgba(0, 0, 0, 0.5)';
-      });
-
-      // Tasirin danna maɓallai
-      const buttons = document.querySelectorAll('.primary-button, .secondary-button');
-      buttons.forEach(button => {
-        button.addEventListener('click', function(e) {
-          // Ƙirƙirar tasirin ripple
-          const ripple = document.createElement('span');
-          const rect = this.getBoundingClientRect();
-          const size = Math.max(rect.width, rect.height);
-          const x = e.clientX - rect.left - size/2;
-          const y = e.clientY - rect.top - size/2;
-          
-          ripple.style.cssText = `
-            position: absolute;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.5);
-            width: ${size}px;
-            height: ${size}px;
-            top: ${y}px;
-            left: ${x}px;
-            transform: scale(0);
-            animation: ripple 0.6s ease-out;
-          `;
-          
-          this.appendChild(ripple);
-          
-          // Cire ripple bayan annabawa
-          setTimeout(() => {
-            ripple.remove();
-          }, 600);
-        });
-      });
-
-      // Ƙara annabawar ripple
-      const rippleStyle = document.createElement('style');
-      rippleStyle.textContent = `
-        @keyframes ripple {
-          to {
-            transform: scale(4);
-            opacity: 0;
-          }
-        }
-        .primary-button, .secondary-button {
-          position: relative;
-          overflow: hidden;
-        }
-      `;
-      document.head.appendChild(rippleStyle);
-    });
-    
-if ('serviceWorker' in navigator) {
-  window.addEventListener('load', () => {
-    navigator.serviceWorker.register('/sw.js')
-      .then(reg => console.log('Service Worker registered.', reg))
-      .catch(err => console.error('SW registration failed:', err));
-  });
-}
-  </script>
+  <script src="js/permissions.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/ui.js"></script>
 </body>
-  </html>
+</html>

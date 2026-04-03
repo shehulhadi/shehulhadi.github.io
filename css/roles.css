@@ -1,0 +1,26 @@
+/* UniConnect — Role Accents */
+/* Applied via data-role attribute on <body> */
+
+[data-role="student"] {
+  --c-accent: #1A3FA0;
+  --c-accent-light: #EBF0FD;
+  --c-accent-rgb: 26, 63, 160;
+}
+
+[data-role="lecturer"] {
+  --c-accent: #D97706;
+  --c-accent-light: #FEF3C7;
+  --c-accent-rgb: 217, 119, 6;
+}
+
+[data-role="senior-lecturer"] {
+  --c-accent: #0891B2;
+  --c-accent-light: #E0F2FE;
+  --c-accent-rgb: 8, 145, 178;
+}
+
+[data-role="leadership"] {
+  --c-accent: #B45309;
+  --c-accent-light: #FEF3C7;
+  --c-accent-rgb: 180, 83, 9;
+}
