@@ -1,8 +1,8 @@
 {
   "name": "OProducts",
   "short_name": "OProducts",
-  "start_url": "/about/",
-  "scope": "/about/",
+  "start_url": "/",
+  "scope": "/",
   "display": "standalone",
   "background_color": "#0a1118",
   "theme_color": "#0a1118",
