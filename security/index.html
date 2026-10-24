@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cybersecurity & NDPR Compliance | OProducts</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #06110e; --surface: #0d211b; --border: rgba(255,255,255,.08);
+  --tx: #eaf5f0; --mut: #8fa89e; --acc: #10d98a; --acc2: #0aa66a; --glow: rgba(16,217,138,.18);
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: var(--bg); color: var(--tx); font-family: 'Inter', sans-serif; line-height: 1.6; }
+h1, h2, h3, .brand { font-family: 'Plus Jakarta Sans', sans-serif; letter-spacing: -0.02em; }
+a { color: inherit; text-decoration: none; }
+.wrap { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
+
+/* Nav */
+nav { display: flex; justify-content: space-between; align-items: center; padding: 20px 0; border-bottom: 1px solid var(--border); }
+.brand { font-size: 1.25rem; font-weight: 800; }
+.brand span { color: var(--acc); }
+.btn { display: inline-flex; align-items: center; justify-content: center; padding: 12px 24px; border-radius: 8px; font-weight: 600; transition: 0.3s; cursor: pointer; border: none; font-size: 1rem; }
+.btn-primary { background: var(--acc); color: #000; box-shadow: 0 4px 20px var(--glow); }
+.btn-primary:hover { background: var(--acc2); transform: translateY(-2px); }
+.btn-outline { background: transparent; border: 1px solid var(--border); color: var(--tx); }
+.btn-outline:hover { border-color: var(--acc); }
+
+/* Hero */
+.hero { padding: 100px 0 60px; text-align: center; }
+.hero h1 { font-size: clamp(2.5rem, 5vw, 4rem); line-height: 1.1; margin-bottom: 24px; }
+.hero h1 span { color: var(--acc); }
+.hero p { font-size: 1.1rem; color: var(--mut); max-width: 600px; margin: 0 auto 40px; }
+.alert-box { background: rgba(239, 68, 68, 0.1); border: 1px solid rgba(239, 68, 68, 0.3); color: #fca5a5; padding: 16px; border-radius: 8px; margin-bottom: 40px; display: inline-block; font-size: 0.9rem; font-weight: 500; }
+
+/* Features */
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 40px; }
+.card { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 24px; transition: 0.3s; }
+.card:hover { border-color: var(--acc); transform: translateY(-4px); }
+.card .ic { width: 44px; height: 44px; border-radius: 12px; background: var(--glow); color: var(--acc); display: grid; place-items: center; font-size: 1.5rem; margin-bottom: 16px; }
+.card h3 { font-size: 1.15rem; margin-bottom: 8px; }
+.card p { font-size: 0.9rem; color: var(--mut); }
+
+/* Process */
+.process { padding: 60px 0; border-top: 1px solid var(--border); margin-top: 60px; }
+.process h2 { text-align: center; margin-bottom: 40px; font-size: 2rem; }
+.steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }
+.step { text-align: center; }
+.step-num { width: 40px; height: 40px; border-radius: 50%; background: var(--glow); color: var(--acc); font-weight: 800; display: flex; align-items: center; justify-content: center; margin: 0 auto 12px; }
+.step h4 { font-size: 1rem; margin-bottom: 4px; }
+.step p { font-size: 0.85rem; color: var(--mut); }
+
+/* Footer */
+footer { text-align: center; padding: 40px 0; border-top: 1px solid var(--border); color: var(--mut); font-size: 0.85rem; margin-top: 60px; }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <nav>
+    <a href="https://shehulhadi.github.io/" class="brand">O<span>Products</span></a>
+    <a href="https://shehulhadi.github.io/" class="btn btn-outline">Back to Studio</a>
+  </nav>
+
+  <section class="hero">
+    <div class="alert-box">⚠️ AI is making cyberattacks cheaper and automated. Is your business protected?</div>
+    <h1>Enterprise-grade security for <span>growing businesses.</span></h1>
+    <p>We secure your web apps, APIs, and customer data against modern threats. Stay compliant with NDPR and protect your reputation.</p>
+    <a href="https://wa.me/2349063200718?text=I%20want%20to%20request%20a%20free%2015-minute%20vulnerability%20check" class="btn btn-primary" style="font-size: 1.1rem; padding: 16px 32px;">Request a Free 15-Min Vulnerability Check &rarr;</a>
+  </section>
+
+  <section>
+    <h2 style="text-align: center; font-size: 2rem; margin-bottom: 10px;">Our Security Services</h2>
+    <p style="text-align: center; color: var(--mut); margin-bottom: 30px;">We find the holes before the hackers do.</p>
+    
+    <div class="grid">
+      <div class="card">
+        <div class="ic">🛡️</div>
+        <h3>Security Audits</h3>
+        <p>We scan your web applications and APIs for exposed keys, SQL injection, and XSS vulnerabilities. You get a full PDF report with fix instructions.</p>
+      </div>
+      <div class="card">
+        <div class="ic">⚖️</div>
+        <h3>NDPR Compliance</h3>
+        <p>The Nigeria Data Protection Regulation requires you to protect user data. We implement encryption, privacy policies, and secure data storage.</p>
+      </div>
+      <div class="card">
+        <div class="ic">🤖</div>
+        <h3>Secure AI Integration</h3>
+        <p>Adding AI to your app? We build secure backend proxies so your API keys are never exposed to the public, and set up billing limits to stop abuse.</p>
+      </div>
+      <div class="card">
+        <div class="ic">💾</div>
+        <h3>Managed Backups</h3>
+        <p>Ransomware can wipe your business in minutes. We set up automated, encrypted daily backups to the cloud so you can restore in one click.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="process">
+    <h2>How We Secure You</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <h4>Scan</h4>
+        <p>We run automated penetration tests on your live systems.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <h4>Report</h4>
+        <p>You receive a clear, non-technical report of your risks.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <h4>Patch</h4>
+        <p>We fix the vulnerabilities and upgrade your legacy code.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <h4>Monitor</h4>
+        <p>We keep your systems updated and backed up 24/7.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2026 OProducts Security. All rights reserved.
+  </footer>
+</div>
+
+</body>
+</html>
